@@ -7,6 +7,10 @@ import BottomNav from "./components/BottomNav/BottomNav";
 import GalleryScreen from "./components/GalleryScreen/GalleryScreen";
 
 function App() {
+  const titles = {
+    home: "Sheikah Slate",
+    gallery: "Galeria",
+  };
   const [currentScreen, setCurrentScreen] = useState("splash");
 
   return (
@@ -15,9 +19,12 @@ function App() {
         <SplashScreen onFinish={() => setCurrentScreen("home")} />
       ) : (
         <>
-          <TopBar />
+          <TopBar title={titles[currentScreen]} />
           {currentScreen === "home" ? <HomeScreen /> : <GalleryScreen />}
-          <BottomNav />
+          <BottomNav
+            currentScreen={currentScreen}
+            onNavigate={setCurrentScreen}
+          />
         </>
       )}
     </QuestProvider>
