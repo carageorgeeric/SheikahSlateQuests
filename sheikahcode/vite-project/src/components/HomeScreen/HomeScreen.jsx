@@ -1,4 +1,5 @@
 import { useState } from "react";
+import QuestCard from "../QuestCard/QuestCard";
 
 export default function HomeScreen() {
   const mockQuests = [
@@ -33,6 +34,8 @@ export default function HomeScreen() {
   const questsToShow =
     filter === "all" ? mockQuests : mockQuests.filter((q) => q.type === filter);
 
+  const [selectedQuest, setSelectedQuest] = useState(null);
+
   return (
     <div>
       <div>Home Screen</div>
@@ -41,7 +44,11 @@ export default function HomeScreen() {
       <button onClick={() => setFilter("side")}> Side Quests </button>
 
       {questsToShow.map((quest) => (
-        <QuestCard key={quest.id} quest={quest} />
+        <QuestCard
+          key={quest.id}
+          quest={quest}
+          onClick={() => setSelectedQuest(quest)}
+        />
       ))}
     </div>
   );
