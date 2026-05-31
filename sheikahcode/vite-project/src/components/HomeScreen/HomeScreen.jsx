@@ -1,6 +1,7 @@
 import { useState } from "react";
 import QuestCard from "../QuestCard/QuestCard";
 import CreateQuestModal from "../CreateQuestModal/CreateQuestModal";
+import QuestDetailModal from "../QuestDetailModal/QuestDetailModal";
 
 export default function HomeScreen() {
   const mockQuests = [
@@ -55,6 +56,12 @@ export default function HomeScreen() {
       ))}
       {modalAberto && (
         <CreateQuestModal onClose={() => setModalAberto(false)} />
+      )}
+      {selectedQuest && (
+        <QuestDetailModal
+          quest={selectedQuest}
+          onClose={() => setSelectedQuest(null)}
+        />
       )}
     </div>
   );
