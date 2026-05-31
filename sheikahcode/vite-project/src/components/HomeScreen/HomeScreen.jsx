@@ -1,5 +1,6 @@
 import { useState } from "react";
 import QuestCard from "../QuestCard/QuestCard";
+import CreateQuestModal from "../CreateQuestModal/CreateQuestModal";
 
 export default function HomeScreen() {
   const mockQuests = [
@@ -35,6 +36,7 @@ export default function HomeScreen() {
     filter === "all" ? mockQuests : mockQuests.filter((q) => q.type === filter);
 
   const [selectedQuest, setSelectedQuest] = useState(null);
+  const [modalAberto, setModalAberto] = useState(false);
 
   return (
     <div>
@@ -42,6 +44,7 @@ export default function HomeScreen() {
       <button onClick={() => setFilter("all")}> Todas </button>
       <button onClick={() => setFilter("main")}> Main Quests </button>
       <button onClick={() => setFilter("side")}> Side Quests </button>
+      <button onClick={() => setModalAberto(true)}>+</button>
 
       {questsToShow.map((quest) => (
         <QuestCard
@@ -50,6 +53,9 @@ export default function HomeScreen() {
           onClick={() => setSelectedQuest(quest)}
         />
       ))}
+      {modalAberto && (
+        <CreateQuestModal onClose={() => setModalAberto(false)} />
+      )}
     </div>
   );
 }
