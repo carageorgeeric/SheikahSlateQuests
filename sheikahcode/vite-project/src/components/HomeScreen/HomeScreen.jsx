@@ -2,39 +2,15 @@ import { useState } from "react";
 import QuestCard from "../QuestCard/QuestCard";
 import CreateQuestModal from "../CreateQuestModal/CreateQuestModal";
 import QuestDetailModal from "../QuestDetailModal/QuestDetailModal";
+import { useQuests } from "../../context/QuestContext";
 
 export default function HomeScreen() {
-  const mockQuests = [
-    {
-      id: "1",
-      title: 'Terminar o Livro "Oh Shift" ',
-      type: "main",
-      description:
-        'Terminar o livro "Oh Shift" e fazer um resumo no caderno designado para isso ',
-      photo: null,
-    },
-    {
-      id: "2",
-      title: "Cozinhar o frango",
-      type: "side",
-      description:
-        "Preparar o frango para o jantar de hoje, seguindo a receita do livro de culinária",
-      photo: null,
-    },
-
-    {
-      id: "3",
-      title: "Limpar a casa",
-      type: "side",
-      description: "Limpar a casa e organizar os cômodos",
-      photo: "foto-existe",
-    },
-  ];
+  const { quests } = useQuests();
 
   const [filter, setFilter] = useState("all"); // 'all' | 'main' | 'side'
 
   const questsToShow =
-    filter === "all" ? mockQuests : mockQuests.filter((q) => q.type === filter);
+    filter === "all" ? quests : quests.filter((q) => q.type === filter);
 
   const [selectedQuest, setSelectedQuest] = useState(null);
   const [modalAberto, setModalAberto] = useState(false);
