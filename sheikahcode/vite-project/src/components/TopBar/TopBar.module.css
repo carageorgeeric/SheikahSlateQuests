@@ -1,0 +1,29 @@
+.top-bar {
+  position: relative;
+  z-index: 5;
+  background: rgba(5, 14, 28, 0.92);
+  border-bottom: 1px solid rgba(30, 111, 168, 0.5);
+  padding: 14px 24px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.top-tab {
+  font-family: "Cinzel", serif;
+  font-size: 10px;
+  color: #3a7aaa;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding-bottom: 3px;
+  transition: color 0.2s;
+}
+.top-tab.active {
+  color: #a8e4ff;
+  border-bottom: 1px solid #5cb8e8;
+}
+.top-tab-hint {
+  font-size: 9px;
+  color: #1e4a6a;
+  margin-right: 4px;
+  font-family: "Rajdhani", sans-serif;
+}

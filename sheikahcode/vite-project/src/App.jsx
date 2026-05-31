@@ -5,6 +5,7 @@ import HomeScreen from "./components/HomeScreen/HomeScreen";
 import TopBar from "./components/TopBar/TopBar";
 import BottomNav from "./components/BottomNav/BottomNav";
 import GalleryScreen from "./components/GalleryScreen/GalleryScreen";
+import Layout from "./components/layout/Layout";
 
 function App() {
   const titles = {
@@ -15,18 +16,20 @@ function App() {
 
   return (
     <QuestProvider>
-      {currentScreen === "splash" ? (
-        <SplashScreen onFinish={() => setCurrentScreen("home")} />
-      ) : (
-        <>
-          <TopBar title={titles[currentScreen]} />
-          {currentScreen === "home" ? <HomeScreen /> : <GalleryScreen />}
-          <BottomNav
-            currentScreen={currentScreen}
-            onNavigate={setCurrentScreen}
-          />
-        </>
-      )}
+      <Layout>
+        {currentScreen === "splash" ? (
+          <SplashScreen onFinish={() => setCurrentScreen("home")} />
+        ) : (
+          <>
+            <TopBar title={titles[currentScreen]} />
+            {currentScreen === "home" ? <HomeScreen /> : <GalleryScreen />}
+            <BottomNav
+              currentScreen={currentScreen}
+              onNavigate={setCurrentScreen}
+            />
+          </>
+        )}
+      </Layout>
     </QuestProvider>
   );
 }

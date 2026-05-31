@@ -1,0 +1,191 @@
+import styles from "./layout.module.css";
+
+export default function Layout({ children }) {
+  return (
+    <div className={styles.screen}>
+      {/* Background SVG */}
+      <svg
+        className={styles.bg}
+        viewBox="0 0 360 680"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        {/* Grid horizontal */}
+        <line
+          x1="0"
+          y1="90"
+          x2="360"
+          y2="90"
+          stroke="#1a3a55"
+          strokeWidth="0.5"
+          opacity="0.5"
+        />
+        <line
+          x1="0"
+          y1="180"
+          x2="360"
+          y2="180"
+          stroke="#162e45"
+          strokeWidth="0.5"
+          opacity="0.4"
+        />
+        <line
+          x1="0"
+          y1="270"
+          x2="360"
+          y2="270"
+          stroke="#162e45"
+          strokeWidth="0.5"
+          opacity="0.3"
+        />
+        <line
+          x1="0"
+          y1="360"
+          x2="360"
+          y2="360"
+          stroke="#162e45"
+          strokeWidth="0.5"
+          opacity="0.3"
+        />
+        <line
+          x1="0"
+          y1="450"
+          x2="360"
+          y2="450"
+          stroke="#162e45"
+          strokeWidth="0.5"
+          opacity="0.3"
+        />
+        <line
+          x1="0"
+          y1="540"
+          x2="360"
+          y2="540"
+          stroke="#162e45"
+          strokeWidth="0.5"
+          opacity="0.3"
+        />
+        {/* Grid vertical */}
+        <line
+          x1="72"
+          y1="0"
+          x2="72"
+          y2="680"
+          stroke="#162e45"
+          strokeWidth="0.5"
+          opacity="0.4"
+        />
+        <line
+          x1="144"
+          y1="0"
+          x2="144"
+          y2="680"
+          stroke="#162e45"
+          strokeWidth="0.5"
+          opacity="0.4"
+        />
+        <line
+          x1="216"
+          y1="0"
+          x2="216"
+          y2="680"
+          stroke="#162e45"
+          strokeWidth="0.5"
+          opacity="0.4"
+        />
+        <line
+          x1="288"
+          y1="0"
+          x2="288"
+          y2="680"
+          stroke="#162e45"
+          strokeWidth="0.5"
+          opacity="0.4"
+        />
+        {/* Olho Sheikah */}
+        <g className={styles.sheikahEye} transform="translate(180, 340)">
+          <circle
+            cx="0"
+            cy="0"
+            r="60"
+            fill="none"
+            stroke="#1e4a6a"
+            strokeWidth="0.5"
+            opacity="0.2"
+          />
+          <circle
+            cx="0"
+            cy="0"
+            r="40"
+            fill="none"
+            stroke="#1e5a80"
+            strokeWidth="0.5"
+            opacity="0.25"
+          />
+          <circle
+            cx="0"
+            cy="0"
+            r="20"
+            fill="none"
+            stroke="#1e6fa8"
+            strokeWidth="0.5"
+            opacity="0.3"
+          />
+          <ellipse
+            cx="0"
+            cy="0"
+            rx="28"
+            ry="14"
+            fill="none"
+            stroke="#1e6fa8"
+            strokeWidth="0.8"
+            opacity="0.4"
+          />
+          <circle
+            cx="0"
+            cy="0"
+            r="7"
+            fill="none"
+            stroke="#2a7ab0"
+            strokeWidth="1"
+            opacity="0.5"
+          />
+          <circle cx="0" cy="0" r="3" fill="#1e5580" opacity="0.6" />
+          <line
+            x1="0"
+            y1="-7"
+            x2="0"
+            y2="-18"
+            stroke="#1e5a80"
+            strokeWidth="0.8"
+            opacity="0.4"
+          />
+          <line
+            x1="-6"
+            y1="-4"
+            x2="-12"
+            y2="-13"
+            stroke="#1e5a80"
+            strokeWidth="0.8"
+            opacity="0.3"
+          />
+          <line
+            x1="6"
+            y1="-4"
+            x2="12"
+            y2="-13"
+            stroke="#1e5a80"
+            strokeWidth="0.8"
+            opacity="0.3"
+          />
+        </g>
+      </svg>
+
+      {/* Scanlines */}
+      <div className={styles.scanlines} />
+
+      <div className={styles.content}>
+        {children}
+      </div>
+    </div>
+  );
+}

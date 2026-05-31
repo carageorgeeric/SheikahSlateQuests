@@ -1,6 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Rajdhani:wght@300;400;500&display=swap");
 
 :root {
-  --sh-bg:  
-;
+  --bg-deep: #040e1a;
+  --bg-main: #080f1c;
+  --bg-card: rgba(8, 22, 40, 0.85);
+  --border: #1e6fa8;
+  --border-dim: #1a4a6a;
+  --cyan: #5cb8e8;
+  --cyan-light: #a8e4ff;
+  --text-dim: #2a5a7a;
+  --text-mid: #3a7aaa;
+  --text-title: #a8d8f0;
+  --font-title: "Cinzel", serif;
+  --font-body: "Rajdhani", sans-serif;
 }

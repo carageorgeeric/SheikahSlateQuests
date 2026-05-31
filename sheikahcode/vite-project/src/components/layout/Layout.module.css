@@ -1,0 +1,48 @@
+.screen {
+  min-height: 100dvh;
+  background: var(--bg-main);
+  border-left: 1.5px solid var(--border);
+  border-right: 1.5px solid var(--border);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+}
+
+.scanlines {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(0, 20, 40, 0.18) 3px,
+    rgba(0, 20, 40, 0.18) 4px
+  );
+  pointer-events: none;
+}
+
+.sheikahEye {
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
