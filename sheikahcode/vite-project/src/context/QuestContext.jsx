@@ -1,9 +1,16 @@
-import { createContext, useState, useContext } from "react";
+import { createContext, useState, useContext, useEffect } from "react";
 
 const QuestContext = createContext();
 
 export function QuestProvider({ children }) {
-  const [quests, setQuests] = useState([]);
+  const [quests, setQuests] = useState(() => {
+    const saved = localStorage.getItem("sheikah-quests");
+    return saved ? JSON.parse(saved) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("sheikah-quests", JSON.stringify(quests));
+  }, [quests]);
 
   function addQuest(quest) {
     const newQuests = {
