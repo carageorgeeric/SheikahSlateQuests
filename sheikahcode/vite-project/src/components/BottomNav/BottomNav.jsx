@@ -1,15 +1,17 @@
+import styles from "./BottomNav.module.css";
+
 export default function BottomNav({ currentScreen, onNavigate }) {
   return (
-    <nav>
+    <nav className={styles.nav}>
       <button
+        className={`${styles.tab} ${currentScreen === "home" ? styles.active : ""}`}
         onClick={() => onNavigate("home")}
-        className={currentScreen === "home" ? "active" : ""}
       >
         Home
       </button>
       <button
+        className={`${styles.tab} ${currentScreen === "gallery" ? styles.active : ""}`}
         onClick={() => onNavigate("gallery")}
-        className={currentScreen === "gallery" ? "active" : ""}
       >
         Gallery
       </button>

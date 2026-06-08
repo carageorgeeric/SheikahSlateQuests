@@ -3,6 +3,7 @@ import QuestCard from "../QuestCard/QuestCard";
 import CreateQuestModal from "../CreateQuestModal/CreateQuestModal";
 import QuestDetailModal from "../QuestDetailModal/QuestDetailModal";
 import { useQuests } from "../../context/QuestContext";
+import styles from "./HomeScreen.module.css";
 
 export default function HomeScreen() {
   const { quests } = useQuests();
@@ -17,11 +18,20 @@ export default function HomeScreen() {
 
   return (
     <div>
-      <div>Home Screen</div>
-      <button onClick={() => setFilter("all")}> Todas </button>
-      <button onClick={() => setFilter("main")}> Main Quests </button>
-      <button onClick={() => setFilter("side")}> Side Quests </button>
-      <button onClick={() => setModalAberto(true)}>+</button>
+      <div className={styles.buttons}>
+        <button className={styles.Btn} onClick={() => setModalAberto(true)}>
+          Criar uma quest
+        </button>
+        <button className={styles.Btn} onClick={() => setFilter("main")}>
+          Main Quests
+        </button>
+        <button className={styles.Btn} onClick={() => setFilter("side")}>
+          Side Quests
+        </button>
+        <button className={styles.Btn} onClick={() => setFilter("all")}>
+          Todas
+        </button>
+      </div>
 
       {questsToShow.map((quest) => (
         <QuestCard

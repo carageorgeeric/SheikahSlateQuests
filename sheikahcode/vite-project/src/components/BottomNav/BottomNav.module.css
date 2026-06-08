@@ -1,0 +1,34 @@
+.nav {
+  border-top: 1px solid rgba(30, 111, 168, 0.45);
+  padding: 10px 24px 14px;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #080f1c;
+}
+
+.tab {
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  font-family: var(--font-body);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 6px 16px;
+  transition: color 0.2s;
+}
+
+.tab:hover {
+  color: var(--text-mid);
+}
+
+.active {
+  color: var(--cyan);
+  border-bottom: 1px solid var(--cyan);
+}

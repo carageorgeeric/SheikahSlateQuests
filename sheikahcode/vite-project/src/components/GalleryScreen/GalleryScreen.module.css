@@ -1,0 +1,20 @@
+.grid {
+  display: grid;
+  gap: 8px;
+  width: 100%;
+  padding: 8px;
+  border-bottom: hsl(from color h s l);
+}
+
+.photo {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.title {
+  text-align: center;
+  font-family: var(--font-title);
+  color: white;
+  padding: 15px;
+}

@@ -1,0 +1,17 @@
+.buttons {
+  padding-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.Btn {
+  font-family: var(--font-body);
+  font-weight: bold;
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  background: var(--cyan);
+}

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useQuests } from "../../context/QuestContext";
+import styles from "./GalleryScreen.module.css";
 
 export default function GalleryScreen() {
   const { quests } = useQuests();
@@ -19,11 +20,13 @@ export default function GalleryScreen() {
   });
 
   return (
-    <div>
+    <div className={styles.grid}>
       {sorted.map((quest) => (
         <div key={quest.id}>
-          {quest.photo && <img src={quest.photo} alt={quest.title} />}
-          <p>{quest.title}</p>
+          <p className={styles.title}>{quest.title}</p>
+          {quest.photo && (
+            <img className={styles.photo} src={quest.photo} alt={quest.title} />
+          )}
         </div>
       ))}
     </div>

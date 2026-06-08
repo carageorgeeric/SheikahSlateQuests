@@ -182,10 +182,7 @@ export default function Layout({ children }) {
 
       {/* Scanlines */}
       <div className={styles.scanlines} />
-
-      <div className={styles.content}>
-        {children}
-      </div>
+      <div className={styles.content}>{children}</div>
     </div>
   );
 }
