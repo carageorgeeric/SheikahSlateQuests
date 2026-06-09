@@ -33,6 +33,7 @@ export default function HomeScreen() {
         </button>
       </div>
 
+    
       {questsToShow.map((quest) => (
         <QuestCard
           key={quest.id}
@@ -47,6 +48,7 @@ export default function HomeScreen() {
         <QuestDetailModal
           quest={selectedQuest}
           onClose={() => setSelectedQuest(null)}
+          
         />
       )}
     </div>
