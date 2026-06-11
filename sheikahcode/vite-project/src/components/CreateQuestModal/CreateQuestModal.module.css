@@ -32,4 +32,17 @@ button {
   color: var(--text);
   font-family: var(--font-body);
   font-weight: bold;
+  color-scheme: dark;
+}
+
+option {
+  background: var(--dark);
+  color: var(--text);
+}
+
+button:hover {
+  background-color: #d2a45b;
+  color: white;
+  cursor: pointer;
+  border-color: #d2a45b;
 }
