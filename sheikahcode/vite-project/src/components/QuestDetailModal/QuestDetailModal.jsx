@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useQuests } from "../../context/QuestContext";
+import styles from "../QuestDetailModal/QuestDetailModal.module.css";
 
 export default function QuestDetailModal({ quest, onClose }) {
   const { updateQuest, completeQuest } = useQuests();
@@ -25,29 +26,31 @@ export default function QuestDetailModal({ quest, onClose }) {
   }
 
   return (
-    <div>
-      <h2>{quest.title}</h2>
+    <div className={styles.overlay2}>
+      <div className={styles.detail}>
+        <h2>{quest.title}</h2>
 
-      <textarea
-        value={description}
-        onChange={(e) => setDescription(e.target.value)}
-      />
-      <button onClick={handleSave}>Salvar Descrição</button>
+        <textarea
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+        />
+        <button onClick={handleSave}>Salvar Descrição</button>
 
-      <button onClick={onClose}> Fechar </button>
+        <button onClick={onClose}> Fechar </button>
 
-      {!quest.photo && (
-        <label>
-          Concluir Quest{" "}
-          <input
-            type="file"
-            accept="image/*"
-            capture="environment"
-            onChange={handlePhoto}
-            style={{ display: "none" }}
-          />
-        </label>
-      )}
+        {!quest.photo && (
+          <label className={styles.concluir}>
+            Concluir Quest{" "}
+            <input
+              type="file"
+              accept="image/*"
+              capture="environment"
+              onChange={handlePhoto}
+              style={{ display: "none" }}
+            />
+          </label>
+        )}
+      </div>
     </div>
   );
 }

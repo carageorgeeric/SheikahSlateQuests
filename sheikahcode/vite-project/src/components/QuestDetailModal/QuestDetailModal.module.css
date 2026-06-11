@@ -1,0 +1,28 @@
+.overlay2 {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.detail {
+  background: var(--dark);
+  border: 1px solid;
+  border-color: #d2a45b;
+  border-radius: 12px;
+  padding: 24px 20px;
+  width: 90%;
+  max-width: 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+label:hover {
+  color: #d2a45b;
+  cursor: pointer;
+  border-color: #d2a45b;
+}
