@@ -3,13 +3,14 @@ import { useQuests } from "../../context/QuestContext";
 import styles from "../QuestDetailModal/QuestDetailModal.module.css";
 
 export default function QuestDetailModal({ quest, onClose }) {
-  const { updateQuest, completeQuest } = useQuests();
+  const { updateQuest, completeQuest, deleteQuest } = useQuests();
   const [description, setDescription] = useState(quest.description);
 
   function handleSave() {
     updateQuest(quest.id, {
       description,
     });
+    onClose();
   }
 
   function handlePhoto(e) {
@@ -25,6 +26,11 @@ export default function QuestDetailModal({ quest, onClose }) {
     reader.readAsDataURL(file);
   }
 
+  function handleDelete() {
+    deleteQuest(quest.id);
+    onClose();
+  }
+
   return (
     <div className={styles.overlay2}>
       <div className={styles.detail}>
@@ -37,6 +43,10 @@ export default function QuestDetailModal({ quest, onClose }) {
         <button onClick={handleSave}>Salvar Descrição</button>
 
         <button onClick={onClose}> Fechar </button>
+
+        <button onClick={handleDelete} className={styles.delete}>
+          Deletar Quest
+        </button>
 
         {!quest.photo && (
           <label className={styles.concluir}>

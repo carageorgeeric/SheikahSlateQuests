@@ -10,8 +10,10 @@ export default function HomeScreen() {
 
   const [filter, setFilter] = useState("all"); // 'all' | 'main' | 'side'
 
+  const activeQuests = quests.filter((q) => q.photo === null);
+
   const questsToShow =
-    filter === "all" ? quests : quests.filter((q) => q.type === filter);
+    filter === "all" ? activeQuests : quests.filter((q) => q.type === filter);
 
   const [selectedQuest, setSelectedQuest] = useState(null);
   const [modalAberto, setModalAberto] = useState(false);
@@ -33,7 +35,6 @@ export default function HomeScreen() {
         </button>
       </div>
 
-    
       {questsToShow.map((quest) => (
         <QuestCard
           key={quest.id}
@@ -48,7 +49,6 @@ export default function HomeScreen() {
         <QuestDetailModal
           quest={selectedQuest}
           onClose={() => setSelectedQuest(null)}
-          
         />
       )}
     </div>
