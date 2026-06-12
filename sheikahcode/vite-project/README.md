@@ -1,16 +1,54 @@
-# React + Vite
+# Sheikah Slate
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Uma lista de tarefas inspirada no Sheikah Slate de *The Legend of Zelda: Breath of the Wild*.
 
-Currently, two official plugins are available:
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react) ![Vite](https://img.shields.io/badge/Vite-8-646CFF?logo=vite)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Funcionalidades
 
-## React Compiler
+- Criar quests (Main Quests e Side Quests)
+- Concluir quests anexando uma foto
+- Galeria com todas as quests concluídas
+- Deletar quests tanto da tela inicial quanto da galeria
+- Dados salvos no `localStorage` — sem necessidade de backend
+- Estética Sheikah: tema escuro, paleta ciano, fontes Cinzel/Rajdhani, olho Sheikah animado no fundo
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tecnologias
 
-## Expanding the ESLint configuration
+- [React 19](https://react.dev/)
+- [Vite 8](https://vitejs.dev/)
+- CSS Modules
+- Context API + localStorage
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Como rodar
+
+```bash
+# Instalar dependências
+npm install
+
+# Iniciar servidor de desenvolvimento
+npm run dev
+
+# Gerar build de produção
+npm run build
+```
+
+## Estrutura do projeto
+
+```
+src/
+├── components/
+│   ├── layout/            # Estrutura base com SVG de fundo e scanlines
+│   ├── TopBar/            # Cabeçalho com título
+│   ├── BottomNav/         # Navegação entre Home e Galeria
+│   ├── HomeScreen/        # Lista de quests com filtros
+│   ├── GalleryScreen/     # Grade de fotos das quests concluídas
+│   ├── QuestCard/         # Item individual de quest
+│   ├── CreateQuestModal/  # Formulário para criar uma nova quest
+│   ├── QuestDetailModal/  # Detalhes, descrição e conclusão da quest
+│   └── SplashScreen/      # Tela de introdução
+├── context/
+│   └── QuestContext.jsx   # Estado global com persistência no localStorage
+└── styles/
+    └── sheikah.css        # Variáveis CSS (cores e fontes)
+```
