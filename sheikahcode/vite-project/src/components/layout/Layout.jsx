@@ -1,3 +1,4 @@
+import { SmoothScroll } from "../SmoothScroll/SmoothScroll";
 import styles from "./layout.module.css";
 
 export default function Layout({ children }) {
@@ -182,7 +183,9 @@ export default function Layout({ children }) {
 
       {/* Scanlines */}
       <div className={styles.scanlines} />
-      <div className={styles.content}>{children}</div>
+      <div className={styles.content}>
+        <SmoothScroll>{children}</SmoothScroll>
+      </div>
     </div>
   );
 }
